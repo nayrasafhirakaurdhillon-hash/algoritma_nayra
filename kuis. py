@@ -1,0 +1,41 @@
+# 1. input nama mahasiswa
+nama = input("nama: ")
+
+#tentukan target nilai brdasarkan nama mahasiswa (kriteria)
+if nama.lower() == "andi":
+    target = 70
+elif nama.lower() == "budi":
+    target = 75
+elif nama.lower() == "citra":
+    target = 80
+else:
+    print("nama mahasiswa tidak terdaftar.")
+    exit()
+
+print(f"targetku {target}! ")
+
+#inisialisai variabel untuk perulangan
+percobaan = 1
+maks_percobaan =3
+lulus = False
+
+# 2 & 3. perulangan menggunakan 'while' untuk menginput nilai hingga maksimal 3 kali
+while percobaan <= maks_percobaan:
+    # meminta inout nilai ujian setiap percobaan
+    nilai = int(input(f"nilai {percobaan}: "))
+
+    # lakukaqn pengecekan terhadap target nilai
+    if nilai >= target:
+        lulus = True
+        break # keluar dari loop jika sudah mencapai target(lulus)
+
+    percobaan += 1
+
+# menyesuaikan jumlah percobaan untuk teks output jika remedial penuh 3 kali
+if percobaan > maks_percobaan:
+    percobaan = maks_percobaan
+# 4. tampilkan pesan sesuai hasil akhir (lulus atau tidak lulus)
+if lulus:
+    print(f"{nama} berhasil lulus setelah {percobaan} kali percobaan!")
+else:
+    print(f"{nama} tidak lulus setelah {percobaan} kali percobaan!")
